@@ -34,3 +34,6 @@ class User(db.Model, SerializerMixin):
 
     def __repr__(self):
         return f'User {self.username}, ID {self.id}'
+
+    def to_dict(self):
+        return {"id": self.id, "username": self.username}
